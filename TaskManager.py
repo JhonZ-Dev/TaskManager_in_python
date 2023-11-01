@@ -20,3 +20,7 @@ class TaskManager:
         with open(filename, 'w') as file:
             for task in self.tasks:
                 file.write(task + '\n')
+    def load_tasks_from_file(self, filename):
+        if os.path.isfile(filename):
+            with open(filename, 'r') as file:
+                self.tasks = file.read().splitlines()

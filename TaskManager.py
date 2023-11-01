@@ -11,3 +11,8 @@ class TaskManager:
     def remove_task(self, task):
         if task in self.tasks:
             self.tasks.remove(task)
+
+    def list_tasks(self):
+        if not self.tasks:
+            return "No tasks found."
+        return "\n".join(self.tasks)

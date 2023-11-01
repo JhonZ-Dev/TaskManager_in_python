@@ -16,3 +16,7 @@ class TaskManager:
         if not self.tasks:
             return "No tasks found."
         return "\n".join(self.tasks)
+    def save_tasks_to_file(self, filename):
+        with open(filename, 'w') as file:
+            for task in self.tasks:
+                file.write(task + '\n')
